@@ -10,11 +10,26 @@ def home():
     return render_template('index.html')
 
 
-@app.route('/register',methods=['POST'])
+@app.route('/login', methods=['POST'])
+def login():
+    user = User.valid_login(request.form)
+    if not user:
+        return redirect('/')
+    session['user_id'] = user.id
+    return redirect('/dashboard')
+
+
+@app.route('/register')
+def create_account():
+    return render_template('register.html')
+
+
+@app.route('/register/account',methods=['POST'])
 def register():
     if not User.valid_registration(request.form):
-        return redirect('/')
+        return redirect('/register')
     data ={ 
+        "username": request.form['username'],
         "first_name": request.form['first_name'],
         "last_name": request.form['last_name'],
         "email": request.form['email'],
@@ -42,11 +57,3 @@ def logout():
     session.clear()
     return redirect('/')
 
-
-@app.route('/login', methods=['POST'])
-def login():
-    user = User.valid_login(request.form)
-    if not user:
-        return redirect('/')
-    session['user_id'] = user.id
-    return redirect('/dashboard')

@@ -8,10 +8,12 @@ bcrypt = Bcrypt(app)
 LETTERS_REGEX = re.compile(r'^[a-zA-Z]+$')
 PASSWORD_REGEX = re.compile(r'^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$')
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
+USERNAME_REGEX = re.compile(r'^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$')
 
 class User:
     def __init__(self, data):
         self.id = data['id']
+        self.username = data['username']
         self.first_name = data['first_name']
         self.last_name = data['last_name']
         self.email = data['email']
@@ -21,7 +23,7 @@ class User:
 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO users (first_name, last_name, email, password) VALUES (%(first_name)s, %(last_name)s, %(email)s, %(password)s)"
+        query = "INSERT INTO users (username, first_name, last_name, email, password) VALUES (%(username)s, %(first_name)s, %(last_name)s, %(email)s, %(password)s)"
         return connectToMySQL('nifty').query_db(query, data)
 
     @classmethod
@@ -45,7 +47,7 @@ class User:
             return cls(results[0])
 
     @classmethod
-    def get_user_email(cls, data):
+    def get_user_by_email(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s"
         results = connectToMySQL('nifty').query_db(query, data)
         if len(results) == 0:
@@ -56,6 +58,13 @@ class User:
     @classmethod
     def check_email_in_db(cls, data):
         query = "SELECT * FROM users WHERE email = %(email)s"
+        
+        results = connectToMySQL('nifty').query_db(query, data)
+        return len(results) == 0
+
+    @classmethod
+    def check_username_in_db(cls, data):
+        query = "SELECT * FROM users WHERE username = %(username)s"
         
         results = connectToMySQL('nifty').query_db(query, data)
         return len(results) == 0
@@ -88,7 +97,18 @@ class User:
         elif not LETTERS_REGEX.match(new_user['last_name']):
             flash ('Last name must contain alphabetical characters only', 'last_name')
             is_valid = False
+
+        if len(new_user['username']) == 0:
+            flash('Username required', 'username')
+            is_valid = False
         
+        elif not USERNAME_REGEX.match(new_user['username']):
+            flash('Username must contain 5 to 20 characters', 'username')
+            is_valid = False
+        
+        elif not User.check_username_in_db(new_user):
+            flash('Username already exists', 'username')
+
         if len(new_user['email']) == 0:
             flash('Email required', 'email')
             is_valid = False
@@ -117,7 +137,7 @@ class User:
 
     @staticmethod
     def valid_login(login_user):
-        user_db = User.get_user_email(login_user)
+        user_db = User.get_user_by_email(login_user)
         if not user_db:
             flash("Invalid email/password", "email_login")
             return False

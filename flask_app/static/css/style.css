@@ -23,6 +23,7 @@ h2{
 
 .font-color{
     color: #5ddcff;
+    font-size: 1.5rem;
 }
 
 .btn-signup{
@@ -33,6 +34,22 @@ h2{
     color: rgb(212, 39, 39);
 }
 
+.email-form{
+  margin-top: 40px;
+}
+
+.form-control{
+  height: 25px;
+  width: 30vh;
+  margin-bottom: 25px;
+  border-radius: 3px;
+}
+
+.no-account{
+  font-size: 1rem;
+  color: #5ddcff;
+  margin-top: 50px;
+}
 
 body {
     min-height: 100vh;
@@ -53,7 +70,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    /* display: flex; */
+    display: flex;
     font-size: 1.5em;
     color: rgb(88 199 250 / 0%);
 }
@@ -106,14 +123,13 @@ body {
     }
 }
 
+/* LOGIN BUTTON ---------- */
 .btn-12{
     position: relative;
-    right: 20px;
     bottom: 20px;
     border:none;
     box-shadow: none;
     width: 130px;
-    /* height: 40px; */
     line-height: 42px;
     -webkit-perspective: 230px;
     perspective: 230px;

@@ -24,7 +24,7 @@
                     {% with email_error = get_flashed_messages(category_filter=['email_login']) %}
                         {% if email_error: %} 
                             {% for message in email_error: %}
-                                <p class="text-danger">{{ message }}</p>
+                                <p class="email-error">{{ message }}</p>
                             {% endfor %} 
                         {% endif %}
                     {% endwith %}
@@ -34,7 +34,7 @@
                             <input type="password" name="password" class="form-control">
                         </div>
                     </div>
-                    <input class="btn-login" type="submit" value="Login">
+                    <button class="custom-btn btn-12"><span>Enter NFT World</span><span>Login</span></button>
                 </form>
                 <p class="font-color">Don't have an account?<a class="btn-signup" href="/register"> Sign Up</a></p>
             </div>

@@ -74,29 +74,29 @@ class User:
     def valid_registration(new_user):
         is_valid = True
         
-        if len(new_user['first_name']) == 0:
-            flash('First name required', 'first_name')
-            is_valid = False
+        # if len(new_user['first_name']) == 0:
+        #     flash('First name required', 'first_name')
+        #     is_valid = False
         
-        elif len(new_user['first_name']) < 3:
-            flash('First name must require at least 3 characters', 'first_name')
-            is_valid = False
+        # elif len(new_user['first_name']) < 3:
+        #     flash('First name must require at least 3 characters', 'first_name')
+        #     is_valid = False
         
-        elif not LETTERS_REGEX.match(new_user['first_name']):
-            flash('First name must contain alphabetical characters only', 'first_name')
-            is_valid = False
+        # elif not LETTERS_REGEX.match(new_user['first_name']):
+        #     flash('First name must contain alphabetical characters only', 'first_name')
+        #     is_valid = False
 
-        if len(new_user['last_name']) == 0:
-            flash('Last name required', 'last_name')
-            is_valid = False
+        # if len(new_user['last_name']) == 0:
+        #     flash('Last name required', 'last_name')
+        #     is_valid = False
         
-        elif len(new_user['last_name']) < 3:
-            flash('Last name must contain at least 3 characters', 'last_name')
-            is_valid = False
+        # elif len(new_user['last_name']) < 3:
+        #     flash('Last name must contain at least 3 characters', 'last_name')
+        #     is_valid = False
         
-        elif not LETTERS_REGEX.match(new_user['last_name']):
-            flash ('Last name must contain alphabetical characters only', 'last_name')
-            is_valid = False
+        # elif not LETTERS_REGEX.match(new_user['last_name']):
+        #     flash ('Last name must contain alphabetical characters only', 'last_name')
+        #     is_valid = False
 
         if len(new_user['username']) == 0:
             flash('Username required', 'username')

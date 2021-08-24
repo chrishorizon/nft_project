@@ -10,35 +10,31 @@
 </head>
 <body>
     <div class="card">
-        <!-- <div class="d-flex justify-content-evenly mt-5">
-            <div class="col-sm-3 bg-light bg-gradient shadow-lg rounded border border-1 p-4"> -->
-                <form action="/login" method="post">
-                    <h2>Login</h2>
-                    <div class="email-form">
-                        <label for="email" class="font-color">Email:</label>
-                        <div class="form-group">
-                            <input placeholder="Email" type="text" name="email" class="form-control">
-                        </div>
-                    </div>
-                    {% with email_error = get_flashed_messages(category_filter=['email_login']) %}
-                        {% if email_error: %} 
-                            {% for message in email_error: %}
-                                <p class="email-error">{{ message }}</p>
-                            {% endfor %} 
-                        {% endif %}
-                    {% endwith %}
-                    <div class="password-form">
-                        <label for="password" class="font-color">Password:</label>
-                        <div class="form-group">
-                            <input placeholder="Password" type="password" name="password" class="form-control">
-                        </div>
-                    </div>
-                    <button class="custom-btn btn-12"><span>Enter NFT World</span><span>Login</span></button>
-                    <p class="no-account">Don't have an account?<a class="btn-signup" href="/register"> Sign Up</a></p>
-                </form>
+        <form action="/login" method="post">
+            <h2>Login</h2>
+            <div class="email-form">
+                <label for="email" class="font-color">Email:</label>
+                <div class="form-group">
+                    <input placeholder="Email" type="text" name="email" class="form-control">
+                </div>
             </div>
-        <!-- </div>
-    </div> -->
+            {% with email_error = get_flashed_messages(category_filter=['email_login']) %}
+                {% if email_error: %}
+                    {% for message in email_error: %}
+                        <p class="login-error">{{ message }}</p>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+            <div class="password-form">
+                <label for="password" class="font-color">Password:</label>
+                <div class="form-group">
+                    <input placeholder="Password" type="password" name="password" class="form-control">
+                </div>
+            </div>
+            <button class="custom-btn btn-12"><span>Enter NFT World</span><span>Login</span></button>
+            <p class="no-account">Don't have an account?<a class="btn-signup" href="/register"> Sign Up</a></p>
+        </form>
+    </div>
     <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

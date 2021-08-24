@@ -123,6 +123,10 @@ body {
     }
 }
 
+.enableEthereumButton{
+  cursor: pointer;
+}
+
 /* LOGIN BUTTON ---------- */
 .btn-12{
     position: relative;

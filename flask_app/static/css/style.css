@@ -72,6 +72,7 @@ h2{
 .eth-platform{
   display: flex;
   align-items: center;
+  margin-top: 25px;
 }
 
 .eth-logo{

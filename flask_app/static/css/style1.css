@@ -42,7 +42,7 @@ body {
 }
 
 .title{
-    margin-bottom: 50px;
+    margin-bottom: 35px;
     display: flex;
     justify-content: center;
 }
@@ -51,13 +51,26 @@ body {
     text-decoration: none;
     color: whitesmoke;
     margin-top: 20px;
+    margin-left: 2px;
+}
+
+.left-links a:hover{
+    color: #5ddcff;
+}
+
+.left-links-bottom a:hover{
+    color: rgb(255, 87, 185);
+}
+
+.left-links-setting a:hover{
+    color: #b687fc;
 }
 
 .left-links-bottom{
     margin-top: 25px;
 }
 
-.left-links-logout{
+.left-links-setting{
     margin-top: 25px;
 }
 
@@ -66,7 +79,7 @@ body {
     width: 170px;
     height: 3px;
     border-radius: 20px;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,149,1) 0%, rgba(243,170,255,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(227,255,253,1) 0%, rgba(255,255,255,1) 100%);
 }
 
 .bar-2{
@@ -75,4 +88,12 @@ body {
     height: 3px;
     border-radius: 20px;
     background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,220,255,1) 0%, rgba(248,254,255,1) 100%);
+}
+
+.bar-3{
+    margin-top: 25px;
+    width: 170px;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,149,1) 0%, rgba(243,170,255,1) 100%);
 }

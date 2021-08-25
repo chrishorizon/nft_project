@@ -5,18 +5,7 @@
     font-family: sans-serif;
 }
 
-/* login card -------------*/
-@property --rotate {
-    syntax: "<angle>";
-    initial-value: 132deg;
-    inherits: false;
-}
-
-:root {
-    --card-height: 65vh;
-    --card-width: calc(var(--card-height) / 1.5);
-}
-
+/* login -------------*/
 h2{
     color: whitesmoke;
 }
@@ -31,7 +20,7 @@ h2{
 }
 
 .login-error{
-    color: rgb(212, 39, 39);
+    color: rgb(243, 69, 69);
     font-size: 1rem;
 }
 
@@ -41,9 +30,10 @@ h2{
 
 .form-control{
   height: 30px;
-  width: 30vh;
+  width: 300px;
   margin-bottom: 25px;
   border-radius: 3px;
+  background-color: rgb(240, 240, 240);
 }
 
 ::placeholder{
@@ -57,8 +47,29 @@ h2{
   margin-top: 50px;
 }
 
+.nft-title{
+  font-size: 2.5rem;
+  color: #5ddcff;
+  letter-spacing: .1em;
+}
+
+.nft-color{
+  color: #a4ebff;
+}
+
+.nft-desc{
+  color: white;
+  margin-top: 20px;
+  font-size: 1.5rem;
+}
+
+.title-card{
+  margin-right: 100px;
+}
+
 body {
     min-height: 100vh;
+    width: 100vw;
     background: #212534;
     display: flex;
     align-items: center;
@@ -66,10 +77,22 @@ body {
     font-family: cursive;
 }
 
+/* Card Border -------------- */
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 60vh;
+  --card-width: calc(var(--card-height) / 1.5);
+}
+
 .card {
     background: #191c29;
-    width: var(--card-width);
-    height: var(--card-height);
+    width: 23rem;
+    height: 30rem;
     padding: 3px;
     position: relative;
     border-radius: 6px;
@@ -129,12 +152,9 @@ body {
     }
 }
 
-.enableEthereumButton{
-  cursor: pointer;
-}
-
 /* LOGIN BUTTON ---------- */
 .btn-12{
+    color: #fff;
     position: relative;
     bottom: 20px;
     border:none;
@@ -147,7 +167,7 @@ body {
   }
   .btn-12 span {
     background: rgb(0,172,238);
-  background: linear-gradient(0deg, rgba(0,172,238,1) 0%, rgba(2,126,251,1) 100%);
+    background: linear-gradient(0deg, rgb(41, 192, 252) 0%, rgba(2,126,251,1) 100%);
     display: block;
     position: absolute;
     width: 130px;
@@ -203,3 +223,62 @@ body {
     transform: rotateX(-90deg);
   }
 
+/* Register button ---------------- */
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+  7px 7px 20px 0px rgba(0,0,0,.1),
+  4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+
+.btn-11 {
+  border: none;
+  background: rgb(251,33,117);
+    background: linear-gradient(0deg, rgb(255, 23, 112) 0%, rgba(234,76,137,1) 100%);
+    color: #fff;
+    overflow: hidden;
+}
+.btn-11:hover {
+    text-decoration: none;
+    color: #fff;
+}
+.btn-11:before {
+    position: absolute;
+    content: '';
+    display: inline-block;
+    top: -180px;
+    left: 0;
+    width: 30px;
+    height: 100%;
+    background-color: #fff;
+    animation: shiny-btn1 3s ease-in-out infinite;
+}
+.btn-11:hover{
+  opacity: .7;
+}
+.btn-11:active{
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+
+@-webkit-keyframes shiny-btn1 {
+  0% { -webkit-transform: scale(0) rotate(45deg); opacity: 0; }
+  80% { -webkit-transform: scale(0) rotate(45deg); opacity: 0.5; }
+  81% { -webkit-transform: scale(4) rotate(45deg); opacity: 1; }
+  100% { -webkit-transform: scale(50) rotate(45deg); opacity: 0; }
+}

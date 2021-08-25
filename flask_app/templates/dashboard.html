@@ -4,13 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
     <title>Home Page</title>
 </head>
 <body>
-    <div class="container d-flex justify-content-evenly">
-        <h1 class="text-center">Welcome {{user.username}}</h1>
-        <a href="/logout" class="btn btn-outline-primary">Logout</a>
+    <div class="container">
+        <header class="left-sidebar">
+            <div class="left-text">
+                <h1 class="title">NIFTYBLOCK</h1>
+                <div class="left-links">
+                    <p><a href="#">Trending</a></p>
+                    <p><a href="#">Explore</a></p>
+                    <p><a href="#">Latest</a></p>
+                    <p><a href="#">Forum</a></p>
+                </div>
+                <div class="bar-1"></div>
+                <div class="left-links-bottom">
+                    <p><a href="#">Your NFTs</a></p>
+                    <p></p><a href="#">Following</a></p>
+                    <p></p><a href="#">Pinned</a></p>
+                    <p></p><a href="#">Home</a></p>
+                </div>
+                <div class="bar-2"></div>
+                <div class="left-links-logout">
+                    <p><a href="#">Settings</a></p>
+                    <p><a href="/logout">LogOut</a></p>
+                </div>
+            </div>
+            <nav>
+
+            </nav>
+        </header>
+
+        <!-- <main>
+            <h1 class="text-center">Welcome {{user.username}}</h1>
+        </main> -->
     </div>
 </body>
 </html>

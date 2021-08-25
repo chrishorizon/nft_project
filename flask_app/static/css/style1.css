@@ -1,0 +1,78 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    width: 100vw;
+    background: #212534;
+    /* display: flex; */
+    /* align-items: center;
+    justify-content: center; */
+    font-family: cursive;
+}
+
+.container{
+    display: flex;
+}
+
+@font-face{
+    font-family: 'corbel';
+    src: url('../fonts/corbel.ttf');
+}
+
+.left-sidebar{
+    background-color: #151728;
+    height: 100vh;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    color: whitesmoke;
+}
+
+.left-text h1{
+    color: #5ddcff;
+    margin-top: 30px;
+    font-family: 'corbel';
+    letter-spacing: 5px;
+    font-size: 1.2rem;
+}
+
+.title{
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.left-links, p, a{
+    text-decoration: none;
+    color: whitesmoke;
+    margin-top: 20px;
+}
+
+.left-links-bottom{
+    margin-top: 25px;
+}
+
+.left-links-logout{
+    margin-top: 25px;
+}
+
+.bar-1{
+    margin-top: 25px;
+    width: 170px;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(255,0,149,1) 0%, rgba(243,170,255,1) 100%);
+}
+
+.bar-2{
+    margin-top: 25px;
+    width: 170px;
+    height: 3px;
+    border-radius: 20px;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(93,220,255,1) 0%, rgba(248,254,255,1) 100%);
+}

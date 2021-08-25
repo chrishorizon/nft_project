@@ -5,21 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> -->
     <title>NFT Project / Login Page</title>
 </head>
 <body>
     <div class="title-card">
-        <h2 class="nft-title"><span class="nft-color">N</span>i<span class="nft-color">ft</span>yBlock</h2>
+        <h2 class="nft-title">NiftyBlock</h2>
         <p class="nft-desc">Share your NFT collection with <br>other collectors around the world.</p>
-        <p class="nft-desc">#1 NFT social platform.</p>
+        <div class="eth-platform">
+            <img class="eth-logo" src="static\img\eth.png" alt="Ethereum Logo">
+            <p class="nft-desc">NFT social platform</p>
+        </div>
     </div>
     <div class="card">
         <form action="/login" method="post">
             <h2>Login</h2>
             <div class="email-form">
                 <label for="email" class="font-color">Email:</label>
-                <div class="form-group">
+                <div>
                     <input placeholder="Email" type="text" name="email" class="form-control">
                 </div>
             </div>
@@ -32,7 +34,7 @@
             {% endwith %}
             <div class="password-form">
                 <label for="password" class="font-color">Password:</label>
-                <div class="form-group">
+                <div>
                     <input placeholder="Password" type="password" name="password" class="form-control">
                 </div>
             </div>

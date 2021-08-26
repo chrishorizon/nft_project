@@ -29,6 +29,7 @@ body {
     display: flex;
     justify-content: center;
     color: whitesmoke;
+    position: fixed;
 }
 
 .title{
@@ -70,7 +71,7 @@ body {
 }
 
 .left-links-setting a:hover{
-    color: #8affbb;
+    color: #a7a7a7;
 }
 
 .left-links-bottom{
@@ -111,6 +112,8 @@ body {
 .search-bar{
     display: flex;
     align-items: center;
+    margin-left: 200px;
+    /* position: fixed; */
 }
 .search-bar input{
     background: #ededed url(https://static.tumblr.com/ftv85bp/MIXmud4tx/search-icon.png) no-repeat 9px center;
@@ -118,7 +121,7 @@ body {
     letter-spacing: 1px;
     margin-top: 18px;
     margin-left: 20px;
-    width: 84vw;
+    width: 83vw;
     padding: 15px 10px 15px 40px;
     border-radius: 3px;
     outline: none;
@@ -162,4 +165,51 @@ input:focus {
     margin-top: 20px;
     margin-left: 1vw;
     
+}
+
+/* NFT Card --------------------------- */
+.main{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 200px;
+    /* width: calc(100% + 100px); */
+}
+.nft-card{
+    width: 360px;
+    height: 455px;
+    background-color: #151728;
+    border-radius: 5px;
+    margin: 40px 20px 0px 20px;
+    cursor: pointer;
+}
+
+.card-header{
+    text-align: end;
+    margin-right: 10px;
+    padding-top: 20px;
+    color: black;
+}
+
+.card-asset{
+    width: 330px;
+    height: 330px;
+}
+
+.nft img{
+    height: 100%;
+    width: 100%;
+    margin-left: 15px;
+}
+
+.card-desc{
+    margin: 20px 10px;
+    display: flex;
+    justify-content: space-between;
+    font-size: .9rem;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.owner{
+    margin-top: 15px;
 }

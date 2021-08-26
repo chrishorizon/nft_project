@@ -13,3 +13,11 @@ function fasterPreview(uploader) {
 $("#imageUpload").change(function () {
     fasterPreview(this);
 });
+
+function addShadow(element){
+    element.classList.add("shadow");
+}
+
+function removeShadow(element){
+    element.classList.remove("shadow");
+}

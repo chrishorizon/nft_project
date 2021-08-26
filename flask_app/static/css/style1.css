@@ -202,14 +202,26 @@ input:focus {
 }
 
 .card-desc{
-    margin: 20px 10px;
+    margin: 20px 20px;
     display: flex;
     justify-content: space-between;
-    font-size: .9rem;
+    font-size: .8rem;
     color: whitesmoke;
     font-weight: bold;
 }
 
+.desc-color{
+    color: rgba(232, 248, 255, 0.5);
+    font-weight: normal;
+}
+
 .owner{
     margin-top: 15px;
+}
+
+.shadow{
+    box-shadow: 5px 5px 5px rgba(58, 107, 126, 0.5);
+    position: relative;
+    bottom: 5px;
+    
 }

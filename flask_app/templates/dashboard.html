@@ -12,7 +12,8 @@
     <div class="container">
         <header class="left-sidebar">
             <div class="left-text">
-                <h1 class="title">NIFTYSCOPE</h1>
+                <a class="title" href="/dashboard">NIFTYSCOPE</a>
+                <!-- <h1 class="title">NIFTYSCOPE</h1> -->
                 <div class="bar-1"></div>
                 <div class="left-links">
                     <p><a href="#">Trending</a></p>
@@ -36,9 +37,27 @@
             </div>
         </header>
 
+        <div class="right-body">
+            <div class="search-bar">
+                <input type="search" placeholder="Search NFTs and accounts...">
+                <div class="pfp">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <div id="profile-container">
+                        <image id="profileImage" src="\static\img\self.jpg" />
+                    </div>
+                    <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                </div>
+            </div>
+            
+            <div class="main">
+
+            </div>
+        </div>
+
         <!-- <main>
             <h1 class="text-center">Welcome {{user.username}}</h1>
         </main> -->
     </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

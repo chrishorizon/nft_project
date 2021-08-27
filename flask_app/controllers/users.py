@@ -16,7 +16,7 @@ def login():
     if not user:
         return redirect('/')
     session['user_id'] = user.id
-    return redirect('/dashboard')
+    return redirect('/home')
 
 
 @app.route('/register')
@@ -38,10 +38,10 @@ def register():
     id = User.save(data)
     session['user_id'] = id
 
-    return redirect('/dashboard')
+    return redirect('/home')
 
 
-@app.route('/dashboard')
+@app.route('/home')
 def dashboard():
     if 'user_id' not in session:
         return redirect('/logout')

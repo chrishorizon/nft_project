@@ -190,13 +190,19 @@ input:focus {
     color: black;
 }
 
-.card-asset{
+/* .card-asset{
     width: 330px;
     height: 330px;
+} */
+
+.nft{
+    height: 330px;
+    width: 330px;
 }
 
 .nft img{
-    height: 100%;
+    height: auto;
+    max-height: 100%;
     width: 100%;
     margin-left: 15px;
 }

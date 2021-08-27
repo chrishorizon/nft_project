@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style1.css') }}">
+    <title>Forum</title>
+</head>
+<body>
+    <div class="container">
+        <header class="left-sidebar">
+            <div class="left-text">
+                <a class="title" href="/home">NIFTYSCOPE</a>
+                <!-- <h1 class="title">NIFTYSCOPE</h1> -->
+                <div class="bar-1"></div>
+                <div class="left-links">
+                    <p><a href="#">Trending</a></p>
+                    <p><a href="#">Explore</a></p>
+                    <p><a href="#">Latest</a></p>
+                    <p><a href="/forum">Forum</a></p>
+                </div>
+                <div class="bar-2"></div>
+                <div class="left-links-bottom">
+                    <p><a href="#">Your NFTs</a></p>
+                    <p><a href="#">Following</a></p>
+                    <p><a href="#">Pinned</a></p>
+                    <p><a href="#">Messages</a></p>
+                </div>
+                <div class="bar-3"></div>
+                <div class="left-links-setting">
+                    <p><a href="#">Wallet</a></p>
+                    <p><a href="#">Settings</a></p>
+                    <p><a href="/logout">Logout</a></p>
+                </div>
+            </div>
+        </header>
+        <div class="right-body">
+            <div class="search-bar">
+                <input type="search" placeholder="Search NFTs and accounts...">
+                <div class="pfp">
+                    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+                    <div id="profile-container">
+                        <image id="profileImage" src="\static\img\self.jpg" />
+                    </div>
+                    <input id="imageUpload" type="file" name="profile_photo" placeholder="Photo" required="" capture>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+    <div class="forum">
+        <table id="table-body">
+            <thead>
+                <tr>
+                <th>Example text</th>
+                <th>Example text</th>
+                <th>Example text</th>
+                <th>Example text</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                <td>A much longer piece of content for demo purposes. More goes here.</td>
+                <td>Example text</td>
+                <td>Example text</td>
+                <td>Example text</td>
+                </tr>
+                <tr>
+                <td>Example text</td>
+                <td>Example text</td>
+                <td>Example text</td>
+                <td>Example text</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    </div>
+</body>
+</html>

@@ -1,7 +1,8 @@
 from flask import render_template, redirect, session, flash, request
 from flask_app import app
-from flask_bcrypt import Bcrypt
+# from flask_bcrypt import Bcrypt
 from flask_app.models.user import User
+from flask_app.models.forum import Forum
 
 # bcrypt = Bcrypt(app)
 
@@ -10,16 +11,39 @@ def forum_page():
     if 'user_id' not in session:
         return redirect('/logout')
     logged_in_user = User.get_user_by_id({'id': session['user_id']})
-    
-    return render_template('forum.html', user = logged_in_user)
 
-# @app.route('/login', methods=['POST'])
-# def login():
-#     user = User.valid_login(request.form)
-#     if not user:
-#         return redirect('/')
-#     session['user_id'] = user.id
-#     return redirect('/home')
+    all_forum_posts = Forum.get_all()
+    
+    return render_template('forum.html', user = logged_in_user, all_forum_posts = all_forum_posts)
+
+@app.route('/forum/create')
+def create_forum():
+    if 'user_id' not in session:
+        return redirect('/')
+    
+    logged_in_user = User.get_user_by_id({'id': session['user_id']})
+    
+    return render_template('create_forum.html', user=logged_in_user)
+
+
+@app.route('/create', methods=['POST'])
+def create():
+    if 'user_id' not in session:
+        return redirect('/')
+
+    if not Forum.valid_post(request.form):
+        return redirect('/new/sighting')
+    
+    sighting = {
+        'location': request.form['location'],
+        'date_of_sighting': request.form['date_of_sighting'],
+        'what_happened': request.form['what_happened'],
+        'num_of_sas': request.form['num_of_sas'],
+        'user_id': session['user_id']
+    }
+
+    Sighting.save(sighting)
+    return redirect('/dashboard')
 
 
 # @app.route('/register')

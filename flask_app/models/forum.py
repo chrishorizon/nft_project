@@ -9,38 +9,50 @@ LETTERS_REGEX = re.compile(r'^[a-zA-Z]+$')
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 USERNAME_REGEX = re.compile(r'^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$')
 
-class User:
-    def __init__(self, data):
-        self.id = data['id']
-        self.username = data['username']
-        # self.first_name = data['first_name']
-        # self.last_name = data['last_name']
-        self.email = data['email']
-        self.password = data['password']
+class Forum:
+    def __init__(self,data):
+        self.title = data['title']
+        self.topic = data['topic']
+        self.description = data['description']
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
     @classmethod
     def save(cls, data):
-        query = "INSERT INTO users (username, email, password) VALUES (%(username)s, %(email)s, %(password)s)"
+        query = "INSERT INTO forums (title, topic, description) VALUES (%(title)s, %(topic)s, %(description)s)"
         return connectToMySQL('nifty').query_db(query, data)
 
     @classmethod
-    def get_all(cls, data):
-        query = "SELECT * FROM users"
-        results = connectToMySQL('nifty').query_db(query, data)
-        users = []
+    def get_all(cls):
+        query = "SELECT * FROM forums"
+        results = connectToMySQL('nifty').query_db(query)
+        forums = []
         for row in results:
-            users.append( cls(row))
-        return users
+            forums.append( cls(row))
+        return forums
 
-    @classmethod 
-    def get_user_by_id(cls, data):
-        query = "SELECT * FROM users WHERE id = %(id)s;"
-        
-        results = connectToMySQL('nifty').query_db(query, data)
 
-        if not results or len(results) == 0: 
-            return False
-        else:
-            return cls(results[0])
+    @staticmethod
+    def valid_post(post):
+        is_valid = True 
+
+        if not len(post['title']) > 0:
+            flash('Title is required', 'title')
+            is_valid = False
+
+        if not len(post['topic']):
+            flash('Topic is required', 'topic')
+            is_valid = False
+        elif len(post['topic']) < 3:
+            flash('Topic must be at least 3 characters', 'topic')
+            is_valid = False
+
+        if not len(post['description']):
+            flash("Description is required", 'description')
+            is_valid = False
+        elif len(post['description']) < 8:
+            flash("Description must be at least 8 characters", 'description')
+            is_valid = False
+
+        return is_valid
+

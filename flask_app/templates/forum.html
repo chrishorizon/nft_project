@@ -49,7 +49,7 @@
         </div>
     </div>
         
-    <div class="forum">
+    <!-- <div class="forum">
         <table id="table-body">
             <thead>
                 <tr>
@@ -73,10 +73,37 @@
                 <td>Example text</td>
                 </tr>
             </tbody>
-        </table>
-    </div>
+        </table> -->
+        <div class="forum">
+            <h2>Forum</h2>
+            <a href="/forum/create">Create Post</a>
+            <table class="">
+                <thead>
+                    <tr>
+                        
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for f_post in all_forum_posts %}
+                    <tr>
+                        <td>{{f_post.title}}</td>
+                        <td>{{f_post.topic}}</td>
+                        <td>{{f_post.description}}</td>
+                        <td>
+                            {% if f_post.user_id == session["user_id"] %}
+                            <a href="/edit/{{sighting.id}}">Edit</a>
+                            <a href="/delete/{{sighting.id}}">Delete</a>
+                            {% else %}
+                            <a href="/show/{{sighting.id}}">View</a>
+                            {% endif %}
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    
 
 
-    </div>
 </body>
 </html>

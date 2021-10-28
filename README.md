@@ -9,19 +9,19 @@ A social platform for NFT enthusiasts
 * [Features](#features)
 * [Status](#status)
 
-### General info
+## General info
 NiftyScope is a platform to share your NFT collection with other collectors around the world. You can view the NFT collection of the collectors you follow.
 
 This project is still in development.
 
-### Technologies
+## Technologies
 * Python 3.9.5
 * Flask
 * HTML
 * CSS
 * SQL
 
-### Setup
+## Setup
 To run this project, install it locally using:
 ```
 $ cd ../nft_project
@@ -33,7 +33,7 @@ $ pipenv shell
 $ python server.py
 ```
 
-### Features
+## Features
 * Creative login and registration page
 * Register new user accounts with RegEx validations
 
@@ -42,5 +42,5 @@ To Do:
 * Display NFT's from wallet to your page
 * Display your friends NFT's on the dashboard
 
-### Status
+## Status
 In development

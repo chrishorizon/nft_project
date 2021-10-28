@@ -1,5 +1,6 @@
 # NiftyScope
 A social platform for NFT enthusiasts
+<br>
 <img src="./nifty-gif.gif" alt="niftyscope" height="500">
 
 ## Table of Contents
